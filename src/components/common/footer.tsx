@@ -17,7 +17,7 @@ export function Footer() {
         {/* Logo and Contact Section */}
         <div className="flex items-center gap-3">
           <img
-            src="./header-logo.png"
+            src="/header-logo.png"
             alt="Logo"
             className="h-8"
           />

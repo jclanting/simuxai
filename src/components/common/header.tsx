@@ -38,7 +38,7 @@ export function Header({ className }: SidebarProps) {
 
   const getLogo = () => (
     <Link href="/" className="pointer flex items-center">
-      <img src="./logo.png" className="mr-3 w-auto h-16" />
+      <img src="/logo.png" className="mr-3 w-auto h-16" />
       <Typography className="!text-white !text-base font-medium ">
         SimuXAI
       </Typography>
