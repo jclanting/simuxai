@@ -1,29 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-import { ThemeProvider } from '@/providers/theme-provider'
-import { Header } from '@/components/common/header'
+
+import { Inter } from 'next/font/google'
+
 import { Footer } from '@/components/common/footer'
+import { Header } from '@/components/common/header'
+import { ThemeProvider } from '@/providers/theme-provider'
 import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title:
-    'Pandem - Information you need during on-call emergencies',
+  title: 'SimuXAI',
   description:
-    'Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.',
-  openGraph: {
-    images: '/opengraph-image.png'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title:
-      'Pandem - Information you need during on-call emergencies',
-    description:
-      'Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.',
-    images: ['https://i.imgur.com/MPMcyPP.png']
-  }
+    'Effortlessly create, execute, and visualize complex simulations with minimal setup, guided by our AI-driven, multi-modal support system.'
 }
 
 export default function RootLayout({

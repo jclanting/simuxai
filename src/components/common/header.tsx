@@ -1,17 +1,14 @@
 'use client'
-import { cn } from '@/lib/utils'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { usePathname } from 'next/navigation'
-import Typography from '@/components/ui/typography'
+import { MenuIcon, X } from "lucide-react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+import { Button } from "@/components/ui/button"
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTrigger
-} from '@/components/ui/drawer'
-import { MenuIcon, X } from 'lucide-react'
+    Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTrigger
+} from "@/components/ui/drawer"
+import Typography from "@/components/ui/typography"
+import { cn } from "@/lib/utils"
 
 interface SidebarProps
   extends React.HTMLAttributes<HTMLDivElement> {}
@@ -20,38 +17,40 @@ export function Header({ className }: SidebarProps) {
   const pathname = usePathname()
   const items = [
     {
-      href: 'https://map.sistilli.dev/public/coding/SaaS+Boilerplate',
-      title: 'Book a demo',
-      openInNewTab: true
-    }
+      href: '/',
+      title: 'Services'
+      // openInNewTab: true
+    },
     // { href: '#pricing', title: 'Features' },
-    // {
-    //   href: 'mailto:myemail@.com',
-    //   title: 'Contact Us'
-    // }
+    {
+      href: '/',
+      title: 'Pricing'
+    },
+    {
+      href: '/',
+      title: 'About Us'
+    },
+    {
+      href: '/',
+      title: 'Contact'
+    }
   ]
 
   const getLogo = () => (
     <Link href="/" className="pointer flex items-center">
-      <img src="/logo.svg" className="mr-3" />
+      <img src="./logo.png" className="mr-3 w-auto h-16" />
       <Typography className="!text-white !text-base font-medium ">
-        Pandem
+        SimuXAI
       </Typography>
     </Link>
   )
 
   const getAuthButtons = () => (
     <div className="flex gap-3 items-center">
-      <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-        target="_blank"
-      >
+      <Link href="/" target="_blank">
         <Typography variant="p">Login</Typography>
       </Link>
-      <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-        target="_blank"
-      >
+      <Link href="/" target="_blank">
         <Button size="tiny" color="ghost">
           <Typography variant="p" className="text-black">
             Sign Up
@@ -72,7 +71,7 @@ export function Header({ className }: SidebarProps) {
             <Link
               href={item.href}
               className="pointer block w-fit"
-              target={item.openInNewTab ? '_blank' : ''}
+              target={item ? '_blank' : ''}
               key={item.title}
             >
               <Typography
@@ -91,8 +90,8 @@ export function Header({ className }: SidebarProps) {
   return (
     <div
       className={cn(
-        `flex md:h-12 h-14 items-center justify-center w-full
-          border-b`,
+        `flex md:h-auto h-auto px-4 py-4 items-center justify-center
+          w-full border-b`,
         className
       )}
     >

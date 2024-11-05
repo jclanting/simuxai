@@ -48,8 +48,8 @@ export default function Page() {
           (including data, information, products or
           services) provided by a third-party that may be
           displayed, included or made available by the
-          Service. Website refers to Pandem, accessible from
-          http://pandem.dev/ You means the individual
+          Service. Website refers to SimuXAI, accessible
+          from https://simuxai.com/ You means the individual
           accessing or using the Service, or the company, or
           other legal entity on behalf of which such
           individual is accessing or using the Service, as

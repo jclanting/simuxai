@@ -1,9 +1,12 @@
-import { Button } from '@/components/ui/button'
-import Typography from '@/components/ui/typography'
-import Image from 'next/image'
-import Feature from './feature'
-import { ArrowUpDown, Timer, Workflow } from 'lucide-react'
-import Link from 'next/link'
+import { Cog, ImageIcon, Puzzle } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+
+import PricingCard from "@/components/pricingcard"
+import { Button } from "@/components/ui/button"
+import Typography from "@/components/ui/typography"
+
+import Feature from "./feature"
 
 export default function Home() {
   return (
@@ -13,17 +16,14 @@ export default function Home() {
     >
       <div className="flex flex-col gap-6 items-center">
         <Typography className="max-w-2xl" variant="h1">
-          Information you need during on-call emergencies
+          Your all-in-one tool for seamless CAE solutions
         </Typography>
         <Typography className="max-w-2xl" variant="h5">
-          Quickly link new on-call tickets to similar past
-          incidents and their solutions. All directly in
-          Slack the moment an incident happens.
+          Effortlessly create, execute, and visualize
+          complex simulations with minimal setup, guided by
+          our AI-driven, multi-modal support system.
         </Typography>
-        <Link
-          href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-          target="_blank"
-        >
+        <Link href="https://simuxai.com/" target="_blank">
           <Button size="tiny" variant="ghost">
             {`Get Started`}
           </Button>
@@ -31,47 +31,85 @@ export default function Home() {
         <Image
           width={1024}
           height={632}
-          alt="Pandem.dev hero image"
-          src="/hero1.png"
+          alt="Demo gif"
+          src="./demo.gif"
         />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
         <div className="flex flex-col gap-12 items-center">
-          <Typography className="max-w-2xl" variant="h1">
-            Quick solutions, less stress
+          <Typography className="max-w-4xl" variant="h1">
+            Build, process, and visualize with ease
           </Typography>
           <div className="flex md:flex-row flex-col gap-12">
             <Feature
-              icon={<Timer size={24} />}
-              headline="Fix emergencies fast"
-              description="Save 20-30 minutes per on-call ticket - no more searching for relevant issues and runbooks"
+              icon={<Cog size={24} />}
+              headline="Full CAE support"
+              description="Empowers CAE at every stage with tools and AI insights to optimize and accelerate simulation workflows"
             />
             <Feature
-              icon={<ArrowUpDown size={24} />}
-              headline="Universally compatible"
-              description="Works with PagerDuty, Jira, or custom Slack alerts—Pandem integrates with any system"
+              icon={<Puzzle size={24} />}
+              headline="End-to-end solutions"
+              description="Automates the entire simulation workflow from setup to post-processing, allowing you to focus on results"
             />
             <Feature
-              icon={<Workflow size={24} />}
-              headline="Secure for your org"
-              description="We keep your data safe by taking top security measures."
+              icon={<ImageIcon size={24} />}
+              headline="Multi-modal interactive"
+              description="Engages with both text and images to deliver seamless post-processed solutions for your simulation needs"
             />
           </div>
         </div>
-        <div className="flex flex-col gap-6 max-w-2xl items-center">
-          <Typography className="max-w-2xl" variant="h1">
-            Instant setup, no custom code
-          </Typography>
-          <Typography className="max-w-2xl" variant="p">
-            Quickly link new on-call tickets to similar past
-            incidents and their solutions. All directly in
-            Slack the moment an incident happens.
-          </Typography>
-          <Image
-            width={1024}
-            height={632}
-            alt="Pandem.dev hero image"
-            src="/hero1.png"
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <PricingCard
+            title="Basic"
+            description="For individuals starting out with essential tools for basic simulation projects"
+            price="TBA"
+            features={[
+              '1 domain',
+              '100GB of disk space',
+              'Unlimited bandwidth',
+              'Shared SSL certificate',
+              '10 email addresses',
+              '24/7 support'
+            ]}
+          />
+          <PricingCard
+            title="Business"
+            description="Ideal for small teams managing multiple simulation needs"
+            price="TBA"
+            features={[
+              '5 domains',
+              '500GB of disk space',
+              'Unlimited bandwidth',
+              'Shared SSL certificate',
+              '30 email addresses',
+              '24/7 support'
+            ]}
+          />
+          <PricingCard
+            title="Professional"
+            description="Advanced features for businesses scaling their simulations"
+            price="TBA"
+            features={[
+              '10 domains',
+              '2GB of disk space',
+              'Unlimited bandwidth',
+              'Shared SSL certificate',
+              '50 email addresses',
+              '24/7 support'
+            ]}
+          />
+          <PricingCard
+            title="Extended"
+            description="Robust resources and support for large-scale enterprise projects"
+            price="TBA"
+            features={[
+              '15 domains',
+              '10GB of disk space',
+              'Unlimited bandwidth',
+              'Shared SSL certificate',
+              '100 email addresses',
+              '24/7 support'
+            ]}
           />
         </div>
         <div className="flex flex-col gap-6 items-center">
@@ -89,6 +127,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* <InfiniteCarousel /> */}
     </div>
   )
 }
