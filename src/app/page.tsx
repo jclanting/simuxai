@@ -32,7 +32,7 @@ export default function Home() {
           width={1024}
           height={632}
           alt="Demo gif"
-          src="./demo.gif"
+          src="/demo.gif"
         />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
