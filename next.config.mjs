@@ -12,7 +12,8 @@ const nextConfig = {
       'm.media-amazon.com',
       'upload.wikimedia.org'
     ]
-  }
+  },
+  path: "/"
 }
 
 export default nextConfig
