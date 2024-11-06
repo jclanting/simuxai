@@ -13,7 +13,7 @@ const nextConfig = {
       'upload.wikimedia.org'
     ]
   },
-  path: ""
+  path: "/"
 }
 
 export default nextConfig
