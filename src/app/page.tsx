@@ -1,18 +1,21 @@
-import { Cog, ImageIcon, Puzzle } from "lucide-react"
-import dynamic from "next/dynamic"
+import { Cog, ImageIcon, Puzzle } from 'lucide-react'
+import dynamic from 'next/dynamic'
 // import Image from "next/image"
-import Link from "next/link"
+import Link from 'next/link'
 
-import PricingCard from "@/components/pricingcard"
-import { Button } from "@/components/ui/button"
-import Typography from "@/components/ui/typography"
+import PricingCard from '@/components/pricingcard'
+import { Button } from '@/components/ui/button'
+import Typography from '@/components/ui/typography'
 
-import Feature from "./feature"
+import Feature from './feature'
 
 // Dynamically import VideoCarousel to disable SSR
-const VideoCarousel = dynamic(async () => await import("@/components/videocarousel"), {
-  ssr: false,
-});
+const VideoCarousel = dynamic(
+  async () => await import('@/components/videocarousel'),
+  {
+    ssr: false
+  }
+)
 
 export default function Home() {
   return (

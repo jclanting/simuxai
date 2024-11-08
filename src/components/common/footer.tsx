@@ -1,8 +1,8 @@
 'use client'
-import { Mail } from "lucide-react"
-import Link from "next/link"
+import { Mail } from 'lucide-react'
+import Link from 'next/link'
 
-import Typography from "@components/ui/typography"
+import Typography from '@components/ui/typography'
 
 export function Footer() {
   return (

@@ -1,13 +1,13 @@
-import { BadgeCheck } from "lucide-react"
+import { BadgeCheck } from 'lucide-react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 
 type PricingCardProps = {
-  title: string;
-  description: string;
-  price: string;
-  features: string[];
-};
+  title: string
+  description: string
+  price: string
+  features: string[]
+}
 
 export default function PricingCard({
   title,

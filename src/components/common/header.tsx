@@ -1,14 +1,18 @@
 'use client'
-import { MenuIcon, X } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { MenuIcon, X } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
-    Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTrigger
-} from "@/components/ui/drawer"
-import Typography from "@/components/ui/typography"
-import { cn } from "@/lib/utils"
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTrigger
+} from '@/components/ui/drawer'
+import Typography from '@/components/ui/typography'
+import { cn } from '@/lib/utils'
 
 interface SidebarProps
   extends React.HTMLAttributes<HTMLDivElement> {}
