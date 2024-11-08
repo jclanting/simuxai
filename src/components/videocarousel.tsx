@@ -9,19 +9,19 @@ export default function VideoCarousel() {
     {
       id: 1,
       thumbnail: '/LES_Combustion.mp4',
-      title: '',
+      title: 'LES Combustion Simulation',
       url: '#'
     },
     {
       id: 2,
       thumbnail: '/Ma5.mp4',
-      title: '',
+      title: ' Multiphase Hypersonic Simulation',
       url: '#'
     },
     {
       id: 3,
       thumbnail: '/65co2.mp4',
-      title: '',
+      title: 'DNS Combustion Simulation',
       url: '#'
     }
   ]
