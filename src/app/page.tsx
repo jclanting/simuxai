@@ -1,5 +1,6 @@
 import { Cog, ImageIcon, Puzzle } from "lucide-react"
-import Image from "next/image"
+import dynamic from "next/dynamic"
+// import Image from "next/image"
 import Link from "next/link"
 
 import PricingCard from "@/components/pricingcard"
@@ -7,6 +8,11 @@ import { Button } from "@/components/ui/button"
 import Typography from "@/components/ui/typography"
 
 import Feature from "./feature"
+
+// Dynamically import VideoCarousel to disable SSR
+const VideoCarousel = dynamic(async () => await import("@/components/videocarousel"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -28,12 +34,14 @@ export default function Home() {
             {`Get Started`}
           </Button>
         </Link>
-        <Image
+        {/* Uncomment if you want to include an image */}
+        {/* <Image
           width={1024}
           height={632}
           alt="Demo gif"
           src="/demo.gif"
-        />
+        /> */}
+        <VideoCarousel />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
         <div className="flex flex-col gap-12 items-center">
@@ -58,59 +66,23 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <PricingCard
-            title="Basic"
-            description="For individuals starting out with essential tools for basic simulation projects"
-            price="TBA"
-            features={[
-              '1 domain',
-              '100GB of disk space',
-              'Unlimited bandwidth',
-              'Shared SSL certificate',
-              '10 email addresses',
-              '24/7 support'
-            ]}
-          />
-          <PricingCard
-            title="Business"
-            description="Ideal for small teams managing multiple simulation needs"
-            price="TBA"
-            features={[
-              '5 domains',
-              '500GB of disk space',
-              'Unlimited bandwidth',
-              'Shared SSL certificate',
-              '30 email addresses',
-              '24/7 support'
-            ]}
-          />
-          <PricingCard
-            title="Professional"
-            description="Advanced features for businesses scaling their simulations"
-            price="TBA"
-            features={[
-              '10 domains',
-              '2GB of disk space',
-              'Unlimited bandwidth',
-              'Shared SSL certificate',
-              '50 email addresses',
-              '24/7 support'
-            ]}
-          />
-          <PricingCard
-            title="Extended"
-            description="Robust resources and support for large-scale enterprise projects"
-            price="TBA"
-            features={[
-              '15 domains',
-              '10GB of disk space',
-              'Unlimited bandwidth',
-              'Shared SSL certificate',
-              '100 email addresses',
-              '24/7 support'
-            ]}
-          />
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+          <div className="max-w-sm mx-auto">
+            <PricingCard
+              title="Basic"
+              description="For individuals starting out with essential tools for basic simulation projects"
+              price="TBA"
+              features={[]}
+            />
+          </div>
+          <div className="max-w-sm mx-auto">
+            <PricingCard
+              title="Business"
+              description="Ideal for small teams managing multiple simulation needs"
+              price="TBA"
+              features={[]}
+            />
+          </div>
         </div>
         <div className="flex flex-col gap-6 items-center">
           <Typography className="max-w-2xl" variant="h1">
@@ -127,7 +99,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* <InfiniteCarousel /> */}
     </div>
   )
 }
